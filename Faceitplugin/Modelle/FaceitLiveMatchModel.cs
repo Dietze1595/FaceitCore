@@ -36,7 +36,7 @@ namespace Faceitplugin.Modelle
         public class Faction
         {
             public  string name { get; set; }
-            public List<Roster> roster { get; }
+            public List<Roster> roster { get; set; }
         }
         public class Roster
         {

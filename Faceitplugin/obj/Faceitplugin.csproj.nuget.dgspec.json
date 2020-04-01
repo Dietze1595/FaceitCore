@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj": {}
+    "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj": {
+    "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj",
+        "projectUniqueName": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
         "projectName": "Faceitplugin",
-        "projectPath": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj",
-        "packagesPath": "C:\\Users\\mldt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\obj\\",
+        "projectPath": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
+        "packagesPath": "C:\\Users\\dietz\\.nuget\\packages\\",
+        "outputPath": "C:\\_\\FacecitCore\\Faceitplugin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mldt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dietz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,7 +98,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.2, 3.0.2]"
+              "version": "[3.0.3, 3.0.3]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

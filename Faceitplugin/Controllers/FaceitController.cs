@@ -1,29 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using Newtonsoft.Json.Linq;
-using FaceitAPI;
-using csgoModels;
 using Faceitplayermodel.config;
 using TodoApi.Models;
-using System;
 using Faceitplugin.Abstraction;
 using Faceitplugin.Client;
+using Faceitplugin.config;
 
 namespace Faceitplugin.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class FaceitController : ControllerBase
+    public class FaceitstatsController : ControllerBase
     {
-        private readonly TodoContext _context;
-        private string resultContent;
-        private FaceitUserAbstraction _faceitAbstraction;
-        private SimpleFaceitClient _client;
+        public TodoContext Context { get; }
 
-
-        public FaceitController(TodoContext context)
+        public FaceitstatsController(TodoContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         // GET: api/Faceit
@@ -35,14 +27,32 @@ namespace Faceitplugin.Controllers
 
         // GET: api/Faceit/Steamid
         [HttpGet("{id}")]
-        public string GetTodoItem(long id)
+        public string GetTodoItem(string id)
         {
-            return "your steamid is: " + id;
+            var modelFaceitmatch = new Faceitmatch();
+            var _faceitAbstraction = new FaceitUserAbstraction();
+            var _client = new SimpleFaceitClient();
 
+            var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(id);      // Get FaceitGUID & FaceitNickname
+            FaceitUserStats providerFaceitStats = _faceitAbstraction.FaceitAvgElo(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
+            modelFaceitmatch = _client.getFaceitMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
+
+            if (modelFaceitmatch != null)
+            {
+                return "Welcome " + providerFaceitDetails.Item2 + ", your AVG Kills:  " + providerFaceitStats.avgKills + " AVG K/D:  " + providerFaceitStats.avgKd + " AVG HS%:  " + providerFaceitStats.avgHs + " AVG K/R:  " + providerFaceitStats.avgKr + "\n" +
+                    "FaceitMatchInformation \n" + modelFaceitmatch.ownTeamName + " vs " + modelFaceitmatch.enemyTeamName + "\n" +
+                    "OwnTeam: " + modelFaceitmatch.ownTeamElo + " WinPoints: " + modelFaceitmatch.ownTeamWinElo + "\n" +
+                    "EnemyTeam: " + modelFaceitmatch.enemyTeamElo + " WinPoints: " + modelFaceitmatch.enemyTeamWinElo;
+            }
+            else
+            {
+                return "Welcome " + providerFaceitDetails.Item2 + ", your AVG Kills:  " + providerFaceitStats.avgKills + " AVG K/D:  " + providerFaceitStats.avgKd + " AVG HS%:  " + providerFaceitStats.avgHs + " AVG K/R:  " + providerFaceitStats.avgKr;
+            }
         }
 
+
         // POST: api/TodoItems
-        [HttpPost]
+        /*[HttpPost]
         public string PostTodoItem(CSGOJson data)
         {
             if (data.player.state == null)
@@ -55,14 +65,14 @@ namespace Faceitplugin.Controllers
                 var _faceitAbstraction = new FaceitUserAbstraction();
                 var _client = new SimpleFaceitClient();
 
-                string steamid = data.provider.steamid;
-                var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(steamid);      // Get FaceitGUID & FaceitNickname
+                //string steamid = data.provider.steamid;
+                //var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(steamid);      // Get FaceitGUID & FaceitNickname
 
                 modelFaceitmatch = _client.getFaceitMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2); // Get FaceitMatchDetails
                 //modelFaceitmatch.providerSteamId = steamid;
                 //Database.Match.Add(modelFaceitmatch);
             }
             return data.provider.steamid;
-        }
+        }*/
     }
 }

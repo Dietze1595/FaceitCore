@@ -28,7 +28,7 @@ namespace FaceitAPI
         public dynamic getFaceitUserDetails(string faceitName)
         {
             WebClient webClient = GetWebClient();
-            dynamic UserDetails = JsonConvert.DeserializeObject(webClient.DownloadString("https://api.faceit.com/core/v1/nicknames/" + faceitName));
+            FaceitNickname UserDetails = JsonConvert.DeserializeObject<FaceitNickname>(webClient.DownloadString("https://api.faceit.com/core/v1/nicknames/" + faceitName));
             return UserDetails;
         }
 
@@ -41,7 +41,6 @@ namespace FaceitAPI
         {
             WebClient webClient = GetWebClient();
             string returnFaceitMatchString = webClient.DownloadString("https://api.faceit.com/match/v1/matches/groupByState?userId=" + playerID).Replace(ongoing, state).Replace(ready, state).Replace(voting, state).ToString();
-
             FaceitLiveMatchModel returnFaceitMatch = JsonConvert.DeserializeObject<FaceitLiveMatchModel>(returnFaceitMatchString);
             return returnFaceitMatch;
         }

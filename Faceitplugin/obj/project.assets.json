@@ -5970,19 +5970,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mldt\\.nuget\\packages\\": {}
+    "C:\\Users\\dietz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj",
+      "projectUniqueName": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
       "projectName": "Faceitplugin",
-      "projectPath": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\Faceitplugin.csproj",
-      "packagesPath": "C:\\Users\\mldt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mldt\\source\\repos\\Faceitplugin\\Faceitplugin\\obj\\",
+      "projectPath": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
+      "packagesPath": "C:\\Users\\dietz\\.nuget\\packages\\",
+      "outputPath": "C:\\_\\FacecitCore\\Faceitplugin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mldt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dietz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6066,7 +6066,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.2, 3.0.2]"
+            "version": "[3.0.3, 3.0.3]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
@@ -6085,7 +6085,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6094,7 +6094,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "message": "Das Paket \"Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1\" wurde nicht mit dem Projektzielframework \".NETCoreApp,Version=v3.0\", sondern mit \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
       "libraryId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.0"
