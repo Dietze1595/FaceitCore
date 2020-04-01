@@ -25,7 +25,7 @@ namespace FaceitAPI
             return returnFaceitUserDetails;
         }
 
-        public dynamic getFaceitUserDetails(string faceitName)
+        public FaceitNickname getFaceitUserDetails(string faceitName)
         {
             WebClient webClient = GetWebClient();
             FaceitNickname UserDetails = JsonConvert.DeserializeObject<FaceitNickname>(webClient.DownloadString("https://api.faceit.com/core/v1/nicknames/" + faceitName));
@@ -37,7 +37,7 @@ namespace FaceitAPI
         /// </summary>
         /// <param name="playerID"></param>
         /// <returns>Teamnames with roster</returns>
-        public dynamic getFaceitLiveMatch(string playerID)
+        public FaceitLiveMatchModel getFaceitLiveMatch(string playerID)
         {
             WebClient webClient = GetWebClient();
             string returnFaceitMatchString = webClient.DownloadString("https://api.faceit.com/match/v1/matches/groupByState?userId=" + playerID).Replace(ongoing, state).Replace(ready, state).Replace(voting, state).ToString();
@@ -45,10 +45,10 @@ namespace FaceitAPI
             return returnFaceitMatch;
         }
 
-        public dynamic getFaceitHistory(string faceitId, int history)
+        public FaceitLastMatch[] getFaceitHistory(string faceitId, int history)
         {
             WebClient webClient = GetWebClient();
-            dynamic FaceitUserMatches = JsonConvert.DeserializeObject(webClient.DownloadString("https://api.faceit.com/stats/v1/stats/time/users/" + faceitId + "/games/csgo?size=" + history));
+            FaceitLastMatch[] FaceitUserMatches = JsonConvert.DeserializeObject<FaceitLastMatch[]>(webClient.DownloadString("https://api.faceit.com/stats/v1/stats/time/users/" + faceitId + "/games/csgo?size=" + history));
             return FaceitUserMatches;
         }
 

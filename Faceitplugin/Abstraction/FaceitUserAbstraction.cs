@@ -39,9 +39,9 @@ namespace Faceitplugin.Abstraction
             var userStats = new FaceitUserStats();
             var _faceitApi = new Faceitapi();
 
-            dynamic UserHistory = _faceitApi.getFaceitHistory(faceitId, historyLength);   //get Object of all Matches
+            FaceitLastMatch[] UserHistory = _faceitApi.getFaceitHistory(faceitId, historyLength);   //get Object of all Matches
 
-            foreach (var Matches in UserHistory)
+            foreach (dynamic Matches in UserHistory)
             {
                 if (Matches.gameMode == "5v5")
                 {
@@ -60,10 +60,10 @@ namespace Faceitplugin.Abstraction
 
         public FaceitUserStats getSumOfStats(dynamic matchStats, dynamic stats)
         {
-            stats.avgKills += Convert.ToInt16(matchStats.i6);
-            stats.avgHs += Convert.ToInt16(matchStats.c4);
-            stats.avgKd += Convert.ToInt32(Convert.ToSingle(matchStats.c2) * 100);
-            stats.avgKr += Convert.ToInt32(Convert.ToSingle(matchStats.c3) * 100);
+            stats.avgKills += Convert.ToInt16(matchStats.Kills);
+            stats.avgHs += Convert.ToInt16(matchStats.Headshot);
+            stats.avgKd += Convert.ToInt32(Convert.ToSingle(matchStats.KD) * 100);
+            stats.avgKr += Convert.ToInt32(Convert.ToSingle(matchStats.KR) * 100);
             return stats;
         }
 
