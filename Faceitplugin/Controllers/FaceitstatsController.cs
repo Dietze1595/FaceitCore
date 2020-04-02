@@ -18,14 +18,14 @@ namespace Faceitplugin.Controllers
             Context = context;
         }
 
-        // GET: api/Faceit
+        // GET: Faceitstats
         [HttpGet]
         public string GetTodoItems()
         {
             return "Please insert a SteamID64";
         }
 
-        // GET: api/Faceit/Steamid
+        // GET: Faceitstats/<steamid>
         [HttpGet("{id}")]
         public string GetTodoItem(string id)
         {
