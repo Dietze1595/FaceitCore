@@ -17,20 +17,29 @@ namespace Faceitplugin.Abstraction
         /// <returns></returns>
         public Tuple<string, string> FaceitUserDetails(string steamID)
         {
-            var _faceitApi = new Faceitapi();
-            string getPlayerGuid = "";
-            string getPlayerName = "";
-            FaceitUserInfoModel getFaceitPlayer = _faceitApi.getFaceitUserInfo(steamID);
-
-            foreach (var Player in getFaceitPlayer.payload.players.results)
+            try
             {
-                if (Player.games.Where(i => i.name == "csgo") != null)
+                var _faceitApi = new Faceitapi();
+                string getPlayerGuid = "";
+                string getPlayerName = "";
+                FaceitUserInfoModel getFaceitPlayer = _faceitApi.getFaceitUserInfo(steamID);
+
+                foreach (var Player in getFaceitPlayer.payload.players.results)
                 {
-                    getPlayerName = Player.nickname;
-                    getPlayerGuid = Player.guid;
+                    if (Player.games.Where(i => i.name == "csgo") != null)
+                    {
+                        getPlayerName = Player.nickname;
+                        getPlayerGuid = Player.guid;
+                        return Tuple.Create(getPlayerGuid, getPlayerName);
+                    }
                 }
+                return null;
+
             }
-            return Tuple.Create(getPlayerGuid, getPlayerName);
+            catch
+            {
+                return null;
+            }
         }
 
         public FaceitUserStats FaceitAvgElo(string faceitId, int historyLength = 50, int calculationLength = 20)
