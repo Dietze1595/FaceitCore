@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "82lpHxSMh+Afnisjjh/82aWIBsfOAMFF4QUbavxT50qj432jzTFba056p4K1N1tqRdl2+sJLjOrUJBNKnfFKLg==",
+  "dgSpecHash": "iuo0Z4iQnZG+PGSxynjpNykT7AtsFooZHUE5si6NqTObH+YFX9WaANnSiYLUasCAZ2qMz92RH8eML5KeI3MCNA==",
   "success": true,
-  "projectFilePath": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
+  "projectFilePath": "C:\\_\\FaceitCore\\Faceitplugin\\Faceitplugin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dietz\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\dietz\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

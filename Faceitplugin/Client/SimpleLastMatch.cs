@@ -10,12 +10,18 @@ namespace Faceitplugin.Client
 {
     public class SimpleLastMatch
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="playerID"></param>
+        /// <param name="nickname"></param>
+        /// <returns>Last FaceitMatch</returns>
         public FaceitLastMatch[] getFaceitLastMatchDetails(string playerID, string nickname)
         {
             var model = new Faceitmatch();
             var _faceitApi = new Faceitapi();
-
-            FaceitLastMatch[] LastMatch = _faceitApi.getFaceitHistory(playerID,1);
+            
+            FaceitLastMatch[] LastMatch = _faceitApi.getFaceitHistory(playerID);
 
             return LastMatch;
         }

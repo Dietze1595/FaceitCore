@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj": {}
+    "C:\\_\\FaceitCore\\Faceitplugin\\Faceitplugin.csproj": {}
   },
   "projects": {
-    "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj": {
+    "C:\\_\\FaceitCore\\Faceitplugin\\Faceitplugin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
+        "projectUniqueName": "C:\\_\\FaceitCore\\Faceitplugin\\Faceitplugin.csproj",
         "projectName": "Faceitplugin",
-        "projectPath": "C:\\_\\FacecitCore\\Faceitplugin\\Faceitplugin.csproj",
+        "projectPath": "C:\\_\\FaceitCore\\Faceitplugin\\Faceitplugin.csproj",
         "packagesPath": "C:\\Users\\dietz\\.nuget\\packages\\",
-        "outputPath": "C:\\_\\FacecitCore\\Faceitplugin\\obj\\",
+        "outputPath": "C:\\_\\FaceitCore\\Faceitplugin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dietz\\AppData\\Roaming\\NuGet\\NuGet.Config",

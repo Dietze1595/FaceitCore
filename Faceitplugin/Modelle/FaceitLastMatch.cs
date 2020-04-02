@@ -34,23 +34,17 @@ namespace Faceitplugin.Modelle
         public string Map { get; set; }
         [JsonProperty("i18", Required = Required.AllowNull)]
         public string Score { get; set; }
-        [JsonProperty("i2", Required = Required.AllowNull)]
-        public string TeamWonGuid { get; set; }
-        [JsonProperty("teamId", Required = Required.AllowNull)]
-        public string TeamGuid { get; set; }
-
-
         [JsonProperty("i10", Required = Required.AllowNull)]
-        public int Unknown1 { get; set; }
+        public int Win_Bool { get; set; }
         [JsonProperty("i14", Required = Required.AllowNull)]
-        public int Unknownn2 { get; set; }
+        public int TripleKills { get; set; }
         [JsonProperty("i15", Required = Required.AllowNull)]
-        public int Unknown3 { get; set; }
+        public int QuadroKills { get; set; }
         [JsonProperty("i16", Required = Required.AllowNull)]
-        public int Unknown4 { get; set; }
+        public int PentaKills { get; set; }
         [JsonProperty("c1", Required = Required.AllowNull)]
-        public int Unknown5 { get; set; }
+        public int Overtime_Bool { get; set; }
         [JsonProperty("i19", Required = Required.AllowNull)]
-        public int Unknown6 { get; set; }
+        public int TeamOvertimeRounds { get; set; }
     }
 }

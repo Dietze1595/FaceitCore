@@ -45,10 +45,16 @@ namespace FaceitAPI
             return returnFaceitMatch;
         }
 
-        public FaceitLastMatch[] getFaceitHistory(string faceitId, int history)
+        /// <summary>
+        /// returns the faceit history with the count of history
+        /// </summary>
+        /// <param name="faceitId"></param>
+        /// <param name="history"></param>
+        /// <returns>Returns the stats of your last Faceitmatches</returns>
+        public FaceitLastMatch[] getFaceitHistory(string faceitId, int historyCounter = 1)
         {
             WebClient webClient = GetWebClient();
-            FaceitLastMatch[] FaceitUserMatches = JsonConvert.DeserializeObject<FaceitLastMatch[]>(webClient.DownloadString("https://api.faceit.com/stats/v1/stats/time/users/" + faceitId + "/games/csgo?size=" + history));
+            FaceitLastMatch[] FaceitUserMatches = JsonConvert.DeserializeObject<FaceitLastMatch[]>(webClient.DownloadString("https://api.faceit.com/stats/v1/stats/time/users/" + faceitId + "/games/csgo?size=" + historyCounter));
             return FaceitUserMatches;
         }
 
