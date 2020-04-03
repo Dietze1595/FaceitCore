@@ -32,8 +32,8 @@ namespace Faceitplugin.Controllers
         public string GetTodoItem(string id)
         {
             var modelFaceitmatch = new Faceitmatch();
-            var _faceitAbstraction = new FaceitUserAbstraction();
-            var _client = new SimpleFaceitClient();
+            var _faceitAbstraction = new SimpleFaceitAverageStats();
+            var _client = new SimpleFaceitMatch();
 
 
             var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(id);      // Get FaceitGUID & FaceitNickname

@@ -15,7 +15,7 @@ namespace Faceitplugin.Modelle
         [JsonProperty("nickname", Required = Required.AllowNull)]
         public string nickname { get; set; }
         [JsonProperty("i13", Required = Required.AllowNull)]
-        public float Headshot { get; set; }
+        public int Headshot { get; set; }
         [JsonProperty("i6", Required = Required.AllowNull)]
         public int Kills { get; set; }
         [JsonProperty("i7", Required = Required.AllowNull)]

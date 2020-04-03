@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Faceitplugin.Abstraction
 {
-    public class FaceitUserAbstraction
+    public class SimpleFaceitAverageStats
     {
         /// <summary>
         /// return of the FaceitGUID and FaceitName based on the SteamID
@@ -22,7 +22,7 @@ namespace Faceitplugin.Abstraction
                 var _faceitApi = new Faceitapi();
                 string getPlayerGuid = "";
                 string getPlayerName = "";
-                FaceitUserInfoModel getFaceitPlayer = _faceitApi.getFaceitUserInfo(steamID);
+                FaceitGameModel getFaceitPlayer = _faceitApi.getFaceitUserInfo(steamID);
 
                 foreach (var Player in getFaceitPlayer.payload.players.results)
                 {
@@ -42,6 +42,13 @@ namespace Faceitplugin.Abstraction
             }
         }
 
+        /// <summary>
+        /// Get FaceitAvg Stats with the historyLength and the calculationLength
+        /// </summary>
+        /// <param name="faceitId"></param>
+        /// <param name="historyLength"></param>
+        /// <param name="calculationLength"></param>
+        /// <returns></returns>
         public FaceitUserStats FaceitAvgElo(string faceitId, int historyLength = 50, int calculationLength = 20)
         {
             int count = 0;
@@ -67,6 +74,12 @@ namespace Faceitplugin.Abstraction
             return userStats;
         }
 
+        /// <summary>
+        /// Addition der Stats
+        /// </summary>
+        /// <param name="matchStats"></param>
+        /// <param name="stats"></param>
+        /// <returns></returns>
         public FaceitUserStats getSumOfStats(dynamic matchStats, dynamic stats)
         {
             stats.avgKills += Convert.ToInt16(matchStats.Kills);
@@ -76,6 +89,12 @@ namespace Faceitplugin.Abstraction
             return stats;
         }
 
+        /// <summary>
+        /// Rückgabe des Mittelwertes der Stats
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public FaceitUserStats getAvgStats(FaceitUserStats user, int count)
         {
             var Userstats = new FaceitUserStats();

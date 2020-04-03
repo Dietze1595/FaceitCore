@@ -9,11 +9,11 @@ namespace Faceitplugin.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class FaceitstatsController : ControllerBase
+    public class FaceitAvgStatsController : ControllerBase
     {
         public TodoContext Context { get; }
 
-        public FaceitstatsController(TodoContext context)
+        public FaceitAvgStatsController(TodoContext context)
         {
             Context = context;
         }
@@ -29,12 +29,9 @@ namespace Faceitplugin.Controllers
         [HttpGet("{id}")]
         public string GetTodoItem(string id)
         {
-            var modelFaceitmatch = new Faceitmatch();
-            var _faceitAbstraction = new FaceitUserAbstraction();
-            var _client = new SimpleFaceitClient();
+            var _faceitAbstraction = new SimpleFaceitAverageStats();
 
             var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(id);      // Get FaceitGUID & FaceitNickname
-
             if (providerFaceitDetails != null)
             {
                 FaceitUserStats providerFaceitStats = _faceitAbstraction.FaceitAvgElo(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname

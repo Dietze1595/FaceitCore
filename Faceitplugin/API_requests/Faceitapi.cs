@@ -18,17 +18,17 @@ namespace FaceitAPI
         /// </summary>
         /// <param name="steamID"></param>
         /// <returns>FaceitUserGuid / FaceitUserName</returns>
-        public FaceitUserInfoModel getFaceitUserInfo(string steamID)
+        public FaceitGameModel getFaceitUserInfo(string steamID)
         {
             WebClient webClient = GetWebClient();
-            FaceitUserInfoModel returnFaceitUserDetails = JsonConvert.DeserializeObject<FaceitUserInfoModel>(webClient.DownloadString("https://api.faceit.com/search/v1?limit=5&query=" + steamID));
+            FaceitGameModel returnFaceitUserDetails = JsonConvert.DeserializeObject<FaceitGameModel>(webClient.DownloadString("https://api.faceit.com/search/v1?limit=5&query=" + steamID));
             return returnFaceitUserDetails;
         }
 
-        public FaceitNickname getFaceitUserDetails(string faceitName)
+        public FaceitUserinfoModel getFaceitUserDetails(string faceitName)
         {
             WebClient webClient = GetWebClient();
-            FaceitNickname UserDetails = JsonConvert.DeserializeObject<FaceitNickname>(webClient.DownloadString("https://api.faceit.com/core/v1/nicknames/" + faceitName));
+            FaceitUserinfoModel UserDetails = JsonConvert.DeserializeObject<FaceitUserinfoModel>(webClient.DownloadString("https://api.faceit.com/core/v1/nicknames/" + faceitName));
             return UserDetails;
         }
 
@@ -57,6 +57,15 @@ namespace FaceitAPI
             FaceitLastMatch[] FaceitUserMatches = JsonConvert.DeserializeObject<FaceitLastMatch[]>(webClient.DownloadString("https://api.faceit.com/stats/v1/stats/time/users/" + faceitId + "/games/csgo?size=" + historyCounter));
             return FaceitUserMatches;
         }
+
+        public FacaeitLifetimeStats getFaceitLifetimeStats(string faceitId)
+        {
+            WebClient webClient = GetWebClient();
+            FacaeitLifetimeStats OverallStats = JsonConvert.DeserializeObject<FacaeitLifetimeStats>(webClient.DownloadString("https://api.faceit.com/stats/api/v1/stats/users/" + faceitId + "/games/csgo"));
+            return OverallStats;
+        }
+
+
 
         private static WebClient GetWebClient()
         {

@@ -6,7 +6,7 @@ using System;
 
 namespace Faceitplugin.Client
 {
-    public class SimpleFaceitClient
+    public class SimpleFaceitMatch
     {
         /// <summary>
         ///     

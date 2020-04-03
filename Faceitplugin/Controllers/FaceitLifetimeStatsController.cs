@@ -11,34 +11,40 @@ namespace Faceitplugin.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class FaceitLastMatchController : ControllerBase
+    public class FaceitLifetimeStatsController : ControllerBase
     {
         public TodoContext Context { get; }
 
-        public FaceitLastMatchController(TodoContext context)
+        public FaceitLifetimeStatsController(TodoContext context)
         {
             Context = context;
         }
 
-        // GET: FaceitLastMatch
+        // GET: FaceitLivetimeStats
         [HttpGet]
         public string GetTodoItems()
         {
             return "Please insert a SteamID64";
         }
 
-        // GET: FaceitLastMatch/<steamId>
+        // GET: FaceitLifetimeStats/<steamid>
         [HttpGet("{id}")]
         public string GetTodoItem(string id)
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
-            var _client = new SimpleLastMatch();
-
+            var _client = new SimpleFaceitLifetimeStats();
 
             var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(id);      // Get FaceitGUID & FaceitNickname
-            FaceitLastMatch[] providerFaceitStats = _client.getFaceitLastMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
-            return "" + JsonConvert.SerializeObject(providerFaceitStats[0]);
 
+            if (providerFaceitDetails != null)
+            {
+                FacaeitLifetimeStats LifetimeStats = _client.getFaceitLifetimeStats(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
+                return "Welcome " + providerFaceitDetails.Item2 + ", " + JsonConvert.SerializeObject(LifetimeStats);
+            }
+            else
+            {
+                return "Welcome, I cant find any Faceitaccount with your inserted SteamId";
+            }
         }
     }
 }
