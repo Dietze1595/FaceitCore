@@ -15,7 +15,7 @@ namespace Faceitplugin.Client
             var model = new Faceitmatch();
             var _faceitApi = new Faceitapi();
 
-            FacaeitLifetimeStats LastMatch = _faceitApi.getFaceitLifetimeStats(faceitId);
+            dynamic LastMatch = _faceitApi.getFaceitLifetimeStats(faceitId);
 
             return LastMatch;
         }

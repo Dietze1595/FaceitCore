@@ -13,22 +13,22 @@ namespace Faceitplugin.Modelle
         public class Lifetime
         {
             [JsonProperty("m1", Required = Required.AllowNull)]
-            public int PlayedMatches { get; set; }
+            public string PlayedMatches { get; set; }
 
             [JsonProperty("m2", Required = Required.AllowNull)]
-            public int WonMatches { get; set; }
+            public string WonMatches { get; set; }
 
             [JsonProperty("k6", Required = Required.AllowNull)]
-            public int WinPercentage { get; set; }
+            public string WinPercentage { get; set; }
 
             [JsonProperty("k5", Required = Required.AllowNull)]
-            public int KD { get; set; }
+            public string KD { get; set; }
 
             [JsonProperty("k8", Required = Required.AllowNull)]
-            public int HSPercentage { get; set; }
+            public string HSPercentage { get; set; }
 
             [JsonProperty("s2", Required = Required.AllowNull)]
-            public int Winningstreak { get; set; }
+            public string Winningstreak { get; set; }
         }
     }
 }
