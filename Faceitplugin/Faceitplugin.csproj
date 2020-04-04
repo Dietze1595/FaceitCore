@@ -5,22 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="HTMLPage\**" />
     <Compile Remove="NewFolder1\**" />
     <Compile Remove="wwwroot\js\**" />
+    <Content Remove="HTMLPage\**" />
     <Content Remove="NewFolder1\**" />
     <Content Remove="wwwroot\js\**" />
+    <EmbeddedResource Remove="HTMLPage\**" />
     <EmbeddedResource Remove="NewFolder1\**" />
     <EmbeddedResource Remove="wwwroot\js\**" />
+    <None Remove="HTMLPage\**" />
     <None Remove="NewFolder1\**" />
     <None Remove="wwwroot\js\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="HTMLPage\htmlpage.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="HTMLPage\htmlpage.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,11 +41,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\CSS\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\HTML\index.html" />
   </ItemGroup>
 
 </Project>

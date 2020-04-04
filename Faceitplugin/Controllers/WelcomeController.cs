@@ -6,6 +6,7 @@ using Faceitplugin.Client;
 using Faceitplugin.config;
 using Faceitplugin.Modelle;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Faceitplugin.Controllers
 {
@@ -22,13 +23,17 @@ namespace Faceitplugin.Controllers
 
         // GET: FaceitLivetimeStats
         [HttpGet]
-        public string GetTodoItems()
+        public IActionResult GetTodoItems()
         {
-            return "We currently have the following API's \n" +
-                "FaceitLifetimeStats/<steamId> \n" +
-                "FaceitAvgStats/<steamId> \n" +
-                "FaceitLastMatch/<steamId> \n" +
-                "FaceitLiveMatch/<steamId> \n";
+            var path = System.IO.Path.Combine(@"C:\_\FaceitCore\Faceitplugin\wwwroot\HTML", "index.html");
+            return PhysicalFile(path, "text/html");
+            /*return new ContentResult
+            {
+                ContentType = "text/html",
+                StatusCode = (int)HttpStatusCode.OK,
+                Content = System.IO.File.ReadAllText("C:/_/FaceitCore/Faceitplugin/wwwroot/HTML/index.html"),
+            };*/
+
         }
     }
 }
