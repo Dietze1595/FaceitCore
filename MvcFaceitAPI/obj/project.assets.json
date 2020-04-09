@@ -8590,11 +8590,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dietz\\source\\repos\\MvcFaceitAPI\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
+      "projectUniqueName": "C:\\_\\FaceitCore\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
       "projectName": "MvcFaceitAPI",
-      "projectPath": "C:\\Users\\dietz\\source\\repos\\MvcFaceitAPI\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
+      "projectPath": "C:\\_\\FaceitCore\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
       "packagesPath": "C:\\Users\\dietz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dietz\\source\\repos\\MvcFaceitAPI\\MvcFaceitAPI\\obj\\",
+      "outputPath": "C:\\_\\FaceitCore\\MvcFaceitAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dietz\\AppData\\Roaming\\NuGet\\NuGet.Config",

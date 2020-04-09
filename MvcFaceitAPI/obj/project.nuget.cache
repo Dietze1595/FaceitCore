@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/9DV01P3tp/gc/G4b14OCu69ZgVWOu/Oozfgxux8MXGgXHCmjbDfOJtICjkHArZP2v1ANxt1vP56tF+TwbuebQ==",
+  "dgSpecHash": "pQoCiJxwLuPgcOR1xzMIoO8LnU1bQWOvRzS3vVu3fJOTUmpwFYFjmcFqjaYiw+1+pthGEo8PwcOCidF79oiHaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dietz\\source\\repos\\MvcFaceitAPI\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
+  "projectFilePath": "C:\\_\\FaceitCore\\MvcFaceitAPI\\MvcFaceitAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dietz\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\dietz\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

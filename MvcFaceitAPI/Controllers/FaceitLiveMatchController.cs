@@ -14,7 +14,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitLiveMatchController : Controller
     {
         // GET: /<controller>/
-        public string Index(string steamId = "0")
+        public string Index(string steamId = "76561198257065483")
         {
             var modelFaceitmatch = new Faceitmatch();
             var _faceitAbstraction = new SimpleFaceitAverageStats();

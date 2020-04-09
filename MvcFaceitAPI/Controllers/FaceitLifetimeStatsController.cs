@@ -14,7 +14,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitLifetimeStatsController : Controller
     {
         // GET: /FaceitLifetimeStats/
-        public string Index(string steamId = "0")
+        public string Index(string steamId = "76561198257065483")
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
             var _client = new SimpleFaceitLifetimeStats();

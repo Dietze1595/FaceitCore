@@ -13,7 +13,7 @@ namespace MvcFaceitAPI.Controllers
         // 
         // GET: /FaceitStreamPlugin?steamId=<steamId>
 
-        public IActionResult Index(string steamId = "0")
+        public IActionResult Index(string steamId = "76561198257065483")
         {
             ViewData["Live"] = 1;
             ViewData["Elo"] = 1450;
