@@ -13,7 +13,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitAvgStatsController : Controller
     {
         // GET: /FaceitAvgStats/
-        public string Index(string steamid = "76561198257065483")
+        public IActionResult Index(string steamid = "76561198257065483")
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
 
@@ -21,12 +21,17 @@ namespace MvcFaceitAPI.Controllers
             if (providerFaceitDetails != null)
             {
                 FaceitUserStats providerFaceitStats = _faceitAbstraction.FaceitAvgElo(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
-                return "Welcome " + providerFaceitDetails.Item2 + ", your AVG Kills:  " + providerFaceitStats.avgKills + " AVG K/D:  " + providerFaceitStats.avgKd + " AVG HS%:  " + providerFaceitStats.avgHs + " AVG K/R:  " + providerFaceitStats.avgKr;
-                
+                ViewData["Name"] = providerFaceitDetails.Item2;
+                ViewData["Kills"] = providerFaceitStats.avgKills;
+                ViewData["HS"] = providerFaceitStats.avgHs;
+                ViewData["KD"] = providerFaceitStats.avgKd;
+                ViewData["KR"] = providerFaceitStats.avgKr;
+
+                return View();
             }
             else
             {
-                return "Kein Faceitaccount gefunden";
+                return View();
             }
             
         }

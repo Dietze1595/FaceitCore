@@ -14,7 +14,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitLifetimeStatsController : Controller
     {
         // GET: /FaceitLifetimeStats/
-        public string Index(string steamId = "76561198257065483")
+        public IActionResult Index(string steamId = "76561198257065483")
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
             var _client = new SimpleFaceitLifetimeStats();
@@ -24,13 +24,20 @@ namespace MvcFaceitAPI.Controllers
             if (providerFaceitDetails != null)
             {
                 FacaeitLifetimeStats LifetimeStats = _client.getFaceitLifetimeStats(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
-                return  "Welcome " + providerFaceitDetails.Item2 + ", Matches gewonnen " + LifetimeStats.lifetime.WonMatches + " von " + LifetimeStats.lifetime.PlayedMatches + " davon " + LifetimeStats.lifetime.WinPercentage +
-                    "% gewonnen,\nHighest winning streak: " + LifetimeStats.lifetime.highesWinningstreak + " derzeitige winningstreak: " + LifetimeStats.lifetime.currentWinningstreak + " K/D von " + LifetimeStats.lifetime.KD;
-                
+                ViewData["Name"] = providerFaceitDetails.Item2;
+                ViewData["WonMatches"] = LifetimeStats.lifetime.WonMatches;
+                ViewData["PlayedMatches"] = LifetimeStats.lifetime.PlayedMatches;
+                ViewData["WinPercentage"] = LifetimeStats.lifetime.WinPercentage;
+                ViewData["highesWinningstreak"] = LifetimeStats.lifetime.highesWinningstreak;
+                ViewData["currentWinningstreak"] = LifetimeStats.lifetime.currentWinningstreak;
+                ViewData["KD"] = LifetimeStats.lifetime.KD;
+                ViewData["Elo"] = "Kommt noch";
+
+                return View();
             }
             else
             {
-                return "Kein Faceitaccount gefunden";
+                return View();
             }
            
         }

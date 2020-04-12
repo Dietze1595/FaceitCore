@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Faceit Lifetime Stats";
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+            background: #cccccc;
+        }
+    </style>
+
+}
+
+<h2> Faceit Lifetimestats from @ViewData["Name"]</h2>
+<p> Derzeitige Elo: @ViewData["Elo"]</p>
+
+<p> Gewonnene Matches: @ViewData["WonMatches"] von @ViewData["PlayedMatches"] gespielten Matches. WinPercentage von @ViewData["WinPercentage"]</p>
+<p> Höchste Winning streak: @ViewData["highesWinningstreak"], derzeitige Winning streak @ViewData["currentWinningstreak"] mit einer KD von @ViewData["KD"]</p>
+
+
+

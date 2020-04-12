@@ -83,7 +83,7 @@ namespace MvcFaceitAPI.Abstraction
         public FaceitUserStats getSumOfStats(dynamic matchStats, dynamic stats)
         {
             stats.avgKills += Convert.ToInt16(matchStats.Kills);
-            stats.avgHs += Convert.ToInt16(matchStats.Headshot);
+            stats.avgHs += Convert.ToInt16(matchStats.HS);
             stats.avgKd += Convert.ToInt32(Convert.ToSingle(matchStats.KD) * 100);
             stats.avgKr += Convert.ToInt32(Convert.ToSingle(matchStats.KR) * 100);
             return stats;

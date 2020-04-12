@@ -328,3 +328,4 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\staticwebassets\MvcFaceitAP
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.dll
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.pdb
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.genruntimeconfig.cache
+C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitAvgStats\Index.cshtml.g.cs
