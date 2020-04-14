@@ -340,3 +340,4 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLastMatch
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLifetimeStats\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitStreamPlugin\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLiveMatch\noFaceit.cshtml.g.cs
+C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutPost.cshtml.g.cs
