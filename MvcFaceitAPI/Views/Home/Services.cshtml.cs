@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MvcFaceitAPI.Views.Home
 {
-    public class PostHomeModel : PageModel
+    public class Services : PageModel
     {
         public void OnGet()
         {

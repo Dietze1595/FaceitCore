@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MvcFaceitAPI.Client;
 using MvcFaceitAPI.Models;
 
 namespace MvcFaceitAPI.Controllers
@@ -20,24 +17,22 @@ namespace MvcFaceitAPI.Controllers
 
         public IActionResult Index(SubscribeModel model)
         {
-            ViewData["steamid"] = model.SteamId;
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Subscribe(SubscribeModel model)
+        public IActionResult Subscribe(SubscribeModel model)
         {
             if (ModelState.IsValid)
             {
-                ViewData["steamid"] = model.SteamId;
-                return View("PostHome");
-            } else
+                var _client = new getSteamId();
+                ViewData["steamid"] = _client.SteamId(model.SteamId);
+                return View("Services");
+            }
+            else
             {
                 return View("Error");
             }
-
         }
-
 
 
         public IActionResult Privacy()

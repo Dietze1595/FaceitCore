@@ -185,8 +185,7 @@
     <div class="container">
         <div class="row">
             <h1 data-aos="fade-up">Grow your Scripts with a better API from Faceit</h1>
-            <h2 data-aos="fade-up" data-aos-delay="400">We are a team (Dietze_ / xyz) of talanted designers and C# programmer making API's easier to use</h2>
-            <h2 data-aos="fade-up" data-aos-delay="400">We made this API with much of 💗 and ☕ in Karlsruhe</h2>
+            <h3 data-aos="fade-up" data-aos-delay="400">Deine SteamId lautet: @ViewData["steamid"]</h3>
         </div>
     </div>
     </div>
@@ -218,8 +217,6 @@
             <div>
                 <p>Deine Eingegbene SteamID lautet: @ViewData["steamid"]</p>
                 <br />
-                <p>Du kannst sie weiterhin verändern </p>
-                <br />
                 @model SubscribeModel
 
                 @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
@@ -235,25 +232,25 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href=" http://503d817b.ngrok.io/FaceitLifetimeStats?steamid=@ViewData["steamid"]">FaceitLifetimeStats</a></h4>
+                        <h4 class="title"><a href="https://localhost:5001/FaceitLifetimeStats?steamid=@ViewData["steamid"]">FaceitLifetimeStats</a></h4>
                         <p class="description">Get your current Lifetime stats from Faceit</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href=" http://503d817b.ngrok.io/FaceitAvgStats?steamid=@ViewData["steamid"]">FaceitAvgStats</a></h4>
+                        <h4 class="title"><a href=https://localhost:5001/FaceitAvgStats?steamid=@ViewData["steamid"]">FaceitAvgStats</a></h4>
                         <p class="description">Get your AVG stats of your last 20 (5v5) Matches</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href="http://503d817b.ngrok.io/FaceitLastMatch?steamid=@ViewData["steamid"]">FaceitLastMatch</a></h4>
+                        <h4 class="title"><a href="https://localhost:5001/FaceitLastMatch?steamid=@ViewData["steamid"]">FaceitLastMatch</a></h4>
                         <p class="description">Get your stats of your last FaceitMatch</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="10000">
                     <div class="icon-box">
-                        <h4 class="title"><a href="http://503d817b.ngrok.io/FaceitLiveMatch?steamid=@ViewData["steamid"]">FaceitLiveMatch</a></h4>
+                        <h4 class="title"><a href="https://localhost:5001/FaceitLiveMatch?steamid=@ViewData["steamid"]">FaceitLiveMatch</a></h4>
                         <p class="description">Get the Teamname / Enemyteamname, Elo and the Win / Loss Points of your current Match</p>
                     </div>
                 </div>
