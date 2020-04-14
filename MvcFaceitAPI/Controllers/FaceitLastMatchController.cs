@@ -14,7 +14,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitLastMatchController : Controller
     {
         // GET: /FaceitLastMatch?steamId=<steamId>
-        public string Index(string steamId = "76561198257065483")
+        public IActionResult Index(string steamId)
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
             var _client = new SimpleLastMatch();
@@ -24,15 +24,28 @@ namespace MvcFaceitAPI.Controllers
             if (providerFaceitDetails != null)
             {
                 FaceitLastMatch[] providerFaceitStats = _client.getFaceitLastMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
-                var end = (providerFaceitStats[0].Win_Bool == 1) ? "gewonnen" : "verloren";
+                var end = (providerFaceitStats[0].Win_Bool == 1) ? "won" : "lost";
+                ViewData["Name"] = providerFaceitDetails.Item2;
+                ViewData["Kills"] = providerFaceitStats[0].Kills;
+                ViewData["Deaths"] = providerFaceitStats[0].Deaths;
+                ViewData["Assists"] = providerFaceitStats[0].Assists;
+                ViewData["Map"] = providerFaceitStats[0].Map;
+                ViewData["gameMode"] = providerFaceitStats[0].gameMode;
+                ViewData["Headshot"] = providerFaceitStats[0].Headshot;
+                ViewData["HS"] = providerFaceitStats[0].HS;
+                ViewData["KD"] = providerFaceitStats[0].KD;
+                ViewData["KR"] = providerFaceitStats[0].KR;
+                ViewData["MVP's"] = providerFaceitStats[0].MVPs;
+                ViewData["Score"] = providerFaceitStats[0].Score;
+                ViewData["Teamname"] = providerFaceitStats[0].Teamname;
+                ViewData["Result"] = end;
 
-                return "Welcome: " + providerFaceitStats[0].nickname + " your last map: " + providerFaceitStats[0].Map + " " + end + " Score: " + providerFaceitStats[0].Score +
-                    "\nKills: " + providerFaceitStats[0].Kills + " Deaths: " + providerFaceitStats[0].Deaths + " Assists: " + providerFaceitStats[0].Assists +
-                    " HS%: " + providerFaceitStats[0].HS + " KD: " + providerFaceitStats[0].KD + " KR: " + providerFaceitStats[0].KR;
+                return View();
             }
             else
             {
-                return "Kein Faceitaccount gefunden";
+                ViewData["Name"] = steamId;
+                return View("noFaceit");
             }
         }
     }

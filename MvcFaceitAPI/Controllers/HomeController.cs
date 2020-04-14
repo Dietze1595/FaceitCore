@@ -18,10 +18,27 @@ namespace MvcFaceitAPI.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(SubscribeModel model)
         {
+            ViewData["steamid"] = model.SteamId;
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Subscribe(SubscribeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewData["steamid"] = model.SteamId;
+                return View("PostHome");
+            } else
+            {
+                return View("Error");
+            }
+
+        }
+
+
 
         public IActionResult Privacy()
         {

@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Faceit Last Match";
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+            background: #cccccc;
+        }
+    </style>
+
+}
+
+<h2> Your live Faceitmatch @ViewData["Name"]</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Your Team @ViewData["ownTeamName"]
+            </th>
+            <th>
+                Enemy Team @ViewData["enemyTeamName"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Your Teamelo: @ViewData["ownTeamElo"] and you can win @ViewData["ownTeamWinElo"]
+            </td>
+            <td>
+                The Enemyelo: @ViewData["enemyTeamElo"] and you can lose @ViewData["enemyTeamWinElo"]
+            </td>
+        </tr>
+    </tbody>
+</table>

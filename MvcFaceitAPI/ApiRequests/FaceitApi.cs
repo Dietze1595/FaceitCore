@@ -58,9 +58,17 @@ namespace MvcFaceitAPI.ApiRequests
 
         public FacaeitLifetimeStats getFaceitLifetimeStats(string faceitId)
         {
-            WebClient webClient = GetWebClient();
-            FacaeitLifetimeStats OverallStats = JsonConvert.DeserializeObject<FacaeitLifetimeStats>(webClient.DownloadString("https://api.faceit.com/stats/api/v1/stats/users/" + faceitId + "/games/csgo"));
-            return OverallStats;
+            try
+            {
+                WebClient webClient = GetWebClient();
+                FacaeitLifetimeStats OverallStats = JsonConvert.DeserializeObject<FacaeitLifetimeStats>(webClient.DownloadString("https://api.faceit.com/stats/api/v1/stats/users/" + faceitId + "/games/csgo"));
+                return OverallStats;
+            }
+            catch
+            {
+                FacaeitLifetimeStats OverallStats = null;
+                return OverallStats;
+            }
         }
         private static WebClient GetWebClient()
         {

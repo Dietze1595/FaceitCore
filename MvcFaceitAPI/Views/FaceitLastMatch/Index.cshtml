@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Faceit Last Match";
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+            background: #cccccc;
+        }
+    </style>
+
+}
+
+<h2> Your Last Faceitmatch @ViewData["Name"]</h2>
+
+<p>
+    You played a @ViewData["gameMode"] on the Map @ViewData["Map"] with the Teamname @ViewData["Teamname"] and you @ViewData["Result"] @ViewData["Score"].</p>
+<p> Kills: @ViewData["Kills"], Deaths: @ViewData["Deaths"], Assists: @ViewData["Assists"]</p>
+<p> Headshot kills: @ViewData["Headshot"], HS%: @ViewData["HS"], K/D: @ViewData["KD"], K/R: @ViewData["KR"], MVPs: @ViewData["MVP's"]</p>

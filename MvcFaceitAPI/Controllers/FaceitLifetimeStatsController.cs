@@ -24,20 +24,29 @@ namespace MvcFaceitAPI.Controllers
             if (providerFaceitDetails != null)
             {
                 FacaeitLifetimeStats LifetimeStats = _client.getFaceitLifetimeStats(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
-                ViewData["Name"] = providerFaceitDetails.Item2;
-                ViewData["WonMatches"] = LifetimeStats.lifetime.WonMatches;
-                ViewData["PlayedMatches"] = LifetimeStats.lifetime.PlayedMatches;
-                ViewData["WinPercentage"] = LifetimeStats.lifetime.WinPercentage;
-                ViewData["highesWinningstreak"] = LifetimeStats.lifetime.highesWinningstreak;
-                ViewData["currentWinningstreak"] = LifetimeStats.lifetime.currentWinningstreak;
-                ViewData["KD"] = LifetimeStats.lifetime.KD;
-                ViewData["Elo"] = "Kommt noch";
+                if (LifetimeStats != null)
+                {
+                    ViewData["Name"] = providerFaceitDetails.Item2;
+                    ViewData["WonMatches"] = LifetimeStats.lifetime.WonMatches;
+                    ViewData["PlayedMatches"] = LifetimeStats.lifetime.PlayedMatches;
+                    ViewData["WinPercentage"] = LifetimeStats.lifetime.WinPercentage;
+                    ViewData["highesWinningstreak"] = LifetimeStats.lifetime.highesWinningstreak;
+                    ViewData["currentWinningstreak"] = LifetimeStats.lifetime.currentWinningstreak;
+                    ViewData["KD"] = LifetimeStats.lifetime.KD;
+                    ViewData["Elo"] = "Kommt noch";
 
-                return View();
+                    return View();
+                }
+                else
+                {
+                    ViewData["Name"] = providerFaceitDetails.Item2;
+                    return View("noFaceit");
+                }
             }
             else
             {
-                return View();
+                ViewData["Name"] = steamId;
+                return View("noFaceit");
             }
            
         }

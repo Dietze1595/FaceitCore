@@ -14,7 +14,7 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitLiveMatchController : Controller
     {
         // GET: /<controller>/
-        public string Index(string steamId = "76561198257065483")
+        public IActionResult Index(string steamId = "76561198257065483")
         {
             var modelFaceitmatch = new Faceitmatch();
             var _faceitAbstraction = new SimpleFaceitAverageStats();
@@ -22,17 +22,30 @@ namespace MvcFaceitAPI.Controllers
 
 
             var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(steamId);      // Get FaceitGUID & FaceitNickname
-            modelFaceitmatch = _client.getFaceitMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
-            if (modelFaceitmatch != null)
+            if (providerFaceitDetails != null)
             {
-                return "Welcome " + providerFaceitDetails.Item2 + "\n" +
-                    "FaceitMatchInformation \n" + modelFaceitmatch.ownTeamName + " vs " + modelFaceitmatch.enemyTeamName + "\n" +
-                    "OwnTeam: " + modelFaceitmatch.ownTeamElo + " WinPoints: " + modelFaceitmatch.ownTeamWinElo + "\n" +
-                    "EnemyTeam: " + modelFaceitmatch.enemyTeamElo + " WinPoints: " + modelFaceitmatch.enemyTeamWinElo;
+                modelFaceitmatch = _client.getFaceitMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
+                if (modelFaceitmatch != null)
+                {
+                    ViewData["name"] = providerFaceitDetails.Item2;
+                    ViewData["enemyTeamElo"] = modelFaceitmatch.enemyTeamElo;
+                    ViewData["enemyTeamName"] = modelFaceitmatch.enemyTeamName;
+                    ViewData["enemyTeamWinElo"] = modelFaceitmatch.enemyTeamWinElo;
+                    ViewData["ownTeamElo"] = modelFaceitmatch.ownTeamElo;
+                    ViewData["ownTeamName"] = modelFaceitmatch.ownTeamName;
+                    ViewData["ownTeamWinElo"] = modelFaceitmatch.ownTeamWinElo;
+                    return View();
+                }
+                else
+                {
+                    ViewData["name"] = providerFaceitDetails.Item2;
+                    return View("noLive");
+                }
             }
             else
             {
-                return "Welcome " + providerFaceitDetails.Item2 + ", currently no Faceit Match ongoing";
+                ViewData["Name"] = steamId;
+                return View("noFaceit");
             }
             
         }

@@ -1,0 +1,263 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+            background: #cccccc;
+        }
+
+        /*--------------------------------------------------------------
+        # Hero Section
+        --------------------------------------------------------------*/
+        #hero {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+            #hero h1 {
+                margin: 0 0 10px 0;
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 56px;
+                color: black;
+            }
+
+            #hero h2 {
+                color: #484848;
+                margin-bottom: 50px;
+                font-size: 24px;
+            }
+
+        /*--------------------------------------------------------------
+        # Sections General
+        --------------------------------------------------------------*/
+        section {
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        .section-bg {
+            background-color: #f7fbfe;
+        }
+
+        .section-title {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+            .section-title h2 {
+                font-size: 32px;
+                font-weight: bold;
+                text-transform: uppercase;
+                position: relative;
+                color: #222222;
+            }
+
+                .section-title h2::before, .section-title h2::after {
+                    content: '';
+                    width: 50px;
+                    height: 2px;
+                    background: #3498db;
+                    display: inline-block;
+                }
+
+                .section-title h2::before {
+                    margin: 0 15px 10px 0;
+                }
+
+                .section-title h2::after {
+                    margin: 0 0 10px 15px;
+                }
+
+            .section-title p {
+                margin: 15px 0 0 0;
+            }
+
+        /*--------------------------------------------------------------
+        # About Us
+        --------------------------------------------------------------*/
+        .about .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .about .content ul li {
+                padding-left: 28px;
+                position: relative;
+            }
+
+        /*--------------------------------------------------------------
+        # Services
+        --------------------------------------------------------------*/
+        /*--------------------------------------------------------------
+        # Services
+        --------------------------------------------------------------*/
+        .services .icon-box {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            background: #cccccc;
+            box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+            transition: all 0.5s ease-in-out;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+            .services .icon-box::before {
+                content: '';
+                position: absolute;
+                background: dimgray;
+                left: -50px;
+                top: -50px;
+                width: 90px;
+                height: 90px;
+                border-radius: 50px;
+                transition: all 0.5s;
+                z-index: -1;
+            }
+
+            .services .icon-box:hover::before {
+                background: dimgray;
+                right: 0;
+                top: 0;
+                width: 120%;
+                height: 100%;
+                border-radius: 0px;
+            }
+
+        .services .icon {
+            margin: 0 auto 20px auto;
+            padding-top: 10px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            transition: all 1s ease-in-out;
+        }
+
+            .services .icon i {
+                font-size: 36px;
+                line-height: 1;
+                color: #fff;
+            }
+
+        .services .title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+            .services .title a {
+                color: #111;
+            }
+
+        .services .description {
+            font-size: 15px;
+            line-height: 28px;
+            margin-bottom: 0;
+        }
+
+        .services .icon-box:hover .title a, .services .icon-box:hover .description {
+            color: #fff;
+        }
+
+        .services .icon-box:hover .icon {
+            background: #fff;
+        }
+
+            .services .icon-box:hover .icon i {
+                color: #3498db;
+            }
+    </style>
+
+
+
+
+
+
+}
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <h1 data-aos="fade-up">Grow your Scripts with a better API from Faceit</h1>
+            <h2 data-aos="fade-up" data-aos-delay="400">We are a team (Dietze_ / xyz) of talanted designers and C# programmer making API's easier to use</h2>
+            <h2 data-aos="fade-up" data-aos-delay="400">We made this API with much of 💗 and ☕ in Karlsruhe</h2>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+<main id="main">
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2>About us</h2>
+                <p>Unterpunkt</p>
+            </div>
+
+            <div class="row">
+                Was soll hier denn rein?
+            </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2>Services</h2>
+                <p>Hier die Auswahl der bisherigen API abfragen</p>
+            </div>
+
+            <div>
+                <p>Deine Eingegbene SteamID lautet: @ViewData["steamid"]</p>
+                <br />
+                <p>Du kannst sie weiterhin verändern </p>
+                <br />
+                @model SubscribeModel
+
+                @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+                {
+                    @Html.TextBox("SteamId", "steamId")
+                    @Html.ValidationMessageFor(model => model.SteamId)
+                    <button type="submit">.. Go ..</button>
+                }
+                <br />
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="title"><a href=" http://503d817b.ngrok.io/FaceitLifetimeStats?steamid=@ViewData["steamid"]">FaceitLifetimeStats</a></h4>
+                        <p class="description">Get your current Lifetime stats from Faceit</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="title"><a href=" http://503d817b.ngrok.io/FaceitAvgStats?steamid=@ViewData["steamid"]">FaceitAvgStats</a></h4>
+                        <p class="description">Get your AVG stats of your last 20 (5v5) Matches</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="title"><a href="http://503d817b.ngrok.io/FaceitLastMatch?steamid=@ViewData["steamid"]">FaceitLastMatch</a></h4>
+                        <p class="description">Get your stats of your last FaceitMatch</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="10000">
+                    <div class="icon-box">
+                        <h4 class="title"><a href="http://503d817b.ngrok.io/FaceitLiveMatch?steamid=@ViewData["steamid"]">FaceitLiveMatch</a></h4>
+                        <p class="description">Get the Teamname / Enemyteamname, Elo and the Win / Loss Points of your current Match</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -13,11 +13,11 @@ namespace MvcFaceitAPI.Controllers
     public class FaceitAvgStatsController : Controller
     {
         // GET: /FaceitAvgStats/
-        public IActionResult Index(string steamid = "76561198257065483")
+        public IActionResult Index(string steamId)
         {
             var _faceitAbstraction = new SimpleFaceitAverageStats();
 
-            var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(steamid);      // Get FaceitGUID & FaceitNickname
+            var providerFaceitDetails = _faceitAbstraction.FaceitUserDetails(steamId);      // Get FaceitGUID & FaceitNickname
             if (providerFaceitDetails != null)
             {
                 FaceitUserStats providerFaceitStats = _faceitAbstraction.FaceitAvgElo(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
@@ -31,7 +31,8 @@ namespace MvcFaceitAPI.Controllers
             }
             else
             {
-                return View();
+                ViewData["Name"] = steamId;
+                return View("noFaceit");
             }
             
         }
