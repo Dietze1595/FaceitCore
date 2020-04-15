@@ -195,10 +195,12 @@
 
             @using (Html.BeginForm("Subscribe", "Home", FormMethod.Get))
             {
-                @Html.TextBox("SteamId", "Steam64ID/CustomSteamId",
+                @Html.TextBox("SteamId", "",
                new {
                    onfocus = "this.select()",
-                   style = "width: 600px; text-align:center" })
+                   style = "width: 600px; text-align:center",
+                   placeholder = "Steam64ID/CustomSteamId"
+               })
                 <button type="submit">.. Go ..</button> <br />
             }
         </divstyle="text-align:>

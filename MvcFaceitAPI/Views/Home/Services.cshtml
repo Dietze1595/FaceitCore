@@ -219,9 +219,15 @@
                 <br />
                 @model SubscribeModel
 
-                @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+                @using (Html.BeginForm("Subscribe", "Home", FormMethod.Get))
                 {
-                    @Html.TextBox("SteamId", "steamId", new { onfocus = "this.select()", style = "width: 400px; text-align:center" })
+                    @Html.TextBox("SteamId", "",
+                 new
+                    {
+                    onfocus = "this.select()",
+                    style = "width: 400px; text-align:center",
+                    placeholder = "Steam64ID/CustomSteamId"
+                 })
                     @Html.ValidationMessageFor(model => model.SteamId)
                     <button type="submit">.. Go ..</button>
                 }
@@ -229,28 +235,29 @@
             </div>
 
 
+
             <div class="row">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLifetimeStats?steamid=@ViewData["steamid"]">FaceitLifetimeStats</a></h4>
+                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLifetimeStats?steamid=@ViewData[" steamid"]">FaceitLifetimeStats</a></h4>
                         <p class="description">Get your current Lifetime stats from Faceit</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitAvgStats?steamid=@ViewData["steamid"]">FaceitAvgStats</a></h4>
+                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitAvgStats?steamid=@ViewData[" steamid"]">FaceitAvgStats</a></h4>
                         <p class="description">Get your AVG stats of your last 20 (5v5) Matches</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLastMatch?steamid=@ViewData["steamid"]">FaceitLastMatch</a></h4>
+                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLastMatch?steamid=@ViewData[" steamid"]">FaceitLastMatch</a></h4>
                         <p class="description">Get your stats of your last FaceitMatch</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="10000">
                     <div class="icon-box">
-                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLiveMatch?steamid=@ViewData["steamid"]">FaceitLiveMatch</a></h4>
+                        <h4 class="title"><a href="http://49f8926f.ngrok.io/FaceitLiveMatch?steamid=@ViewData[" steamid"]">FaceitLiveMatch</a></h4>
                         <p class="description">Get the Teamname / Enemyteamname, Elo and the Win / Loss Points of your current Match</p>
                     </div>
                 </div>
