@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MvcFaceitAPI.Abstraction;
 using MvcFaceitAPI.Client;
 using MvcFaceitAPI.Modelle;
@@ -23,7 +19,7 @@ namespace MvcFaceitAPI.Controllers
 
             if (providerFaceitDetails != null)
             {
-                FacaeitLifetimeStats LifetimeStats = _client.getFaceitLifetimeStats(providerFaceitDetails.Item1);      // Get FaceitGUID & FaceitNickname
+                FacaeitLifetimeStats LifetimeStats = _client.getFaceitLifetimeStats(providerFaceitDetails.Item1, providerFaceitDetails.Item2);      // Get FaceitGUID & FaceitNickname
                 if (LifetimeStats != null)
                 {
                     ViewData["Name"] = providerFaceitDetails.Item2;
@@ -33,7 +29,8 @@ namespace MvcFaceitAPI.Controllers
                     ViewData["highesWinningstreak"] = LifetimeStats.lifetime.highesWinningstreak;
                     ViewData["currentWinningstreak"] = LifetimeStats.lifetime.currentWinningstreak;
                     ViewData["KD"] = LifetimeStats.lifetime.KD;
-                    ViewData["Elo"] = "Kommt noch";
+                    ViewData["Elo"] = LifetimeStats.lifetime.Elo;
+                    ViewData["Level"] = LifetimeStats.lifetime.Level;
 
                     return View();
                 }

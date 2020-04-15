@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Faceitplayermodel.config;
+﻿using Faceitplayermodel.config;
 using Microsoft.AspNetCore.Mvc;
 using MvcFaceitAPI.Abstraction;
 using MvcFaceitAPI.Client;

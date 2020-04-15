@@ -332,7 +332,6 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitAvgStats\
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLifetimeStats\Index.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLastMatch\Index.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error.cshtml.g.cs
-C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\PostHome.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitAvgStats\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLiveMatch\Index.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLiveMatch\noLive.cshtml.g.cs
@@ -341,3 +340,4 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLifetimeS
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitStreamPlugin\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLiveMatch\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutPost.cshtml.g.cs
+C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Services.cshtml.g.cs

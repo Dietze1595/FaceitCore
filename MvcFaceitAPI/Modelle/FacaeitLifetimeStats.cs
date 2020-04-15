@@ -31,6 +31,10 @@ namespace MvcFaceitAPI.Modelle
             public string highesWinningstreak { get; set; }
             [JsonProperty("s1", Required = Required.AllowNull)]
             public string currentWinningstreak { get; set; }
+
+            public int Elo { get; set; }
+
+            public int Level { get; set; }
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Faceitplayermodel.config;
+﻿using Faceitplayermodel.config;
 using Microsoft.AspNetCore.Mvc;
 using MvcFaceitAPI.Abstraction;
 using MvcFaceitAPI.Client;
@@ -31,7 +27,7 @@ namespace MvcFaceitAPI.Controllers
             if (providerFaceitDetails != null)
             {
                 modelFaceitmatch = _client.getFaceitMatchDetails(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
-                FacaeitLifetimeStats LifetimeStats = _Lifetime.getFaceitLifetimeStats(providerFaceitDetails.Item1);
+                FacaeitLifetimeStats LifetimeStats = _Lifetime.getFaceitLifetimeStats(providerFaceitDetails.Item1, providerFaceitDetails.Item2);
                 FaceitUserStats providerFaceitStats = _faceitAbstraction.FaceitAvgElo(providerFaceitDetails.Item1);
 
                 if (modelFaceitmatch != null)
@@ -48,7 +44,7 @@ namespace MvcFaceitAPI.Controllers
                     ViewData["Live"] = 0; 
                 }
 
-                ViewData["Elo"] = 1450;
+                ViewData["Elo"] = LifetimeStats.lifetime.Elo;
                 ViewData["WonMatches"] = LifetimeStats.lifetime.WonMatches;
                 ViewData["PlayedMatches"] = LifetimeStats.lifetime.PlayedMatches;
                 ViewData["WinPercentage"] = LifetimeStats.lifetime.WinPercentage;
