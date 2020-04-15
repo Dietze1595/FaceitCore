@@ -221,7 +221,7 @@
 
                 @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
                 {
-                    @Html.TextBox("SteamId", "steamId")
+                    @Html.TextBox("SteamId", "steamId", new { onfocus = "this.select()", style = "width: 400px; text-align:center" })
                     @Html.ValidationMessageFor(model => model.SteamId)
                     <button type="submit">.. Go ..</button>
                 }
