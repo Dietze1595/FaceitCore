@@ -25,7 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger" href="http://49f8926f.ngrok.io/FaceitStreamPlugin?steamid=@ViewData["steamid"]">Stream plugin</a>
+                            <a class="nav-link text-danger" asp-area="" asp-controller="FaceitStreamPlugin" asp-action="" asp-route-steamId="@ViewData["steamid"]">Stream plugin</a>
                         </li>
                     </ul>
                 </div>

@@ -44,7 +44,7 @@ namespace MvcFaceitAPI.Modelle
         public int PentaKills { get; set; }
         [JsonProperty("c1", Required = Required.AllowNull)]
         public int Overtime_Bool { get; set; }
-        [JsonProperty("i19", Required = Required.AllowNull)]
+        [JsonProperty("i19", Required = default)]
         public int TeamOvertimeRounds { get; set; }
     }
 }
