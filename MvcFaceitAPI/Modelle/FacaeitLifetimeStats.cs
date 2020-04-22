@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace MvcFaceitAPI.Modelle
 {
@@ -12,6 +14,8 @@ namespace MvcFaceitAPI.Modelle
 
         public class Lifetime
         {
+            [Display(Name = "PlayedMatches")]
+            [Column(TypeName = "decimal(2, 2)")]
             [JsonProperty("m1", Required = Required.AllowNull)]
             public string PlayedMatches { get; set; }
 

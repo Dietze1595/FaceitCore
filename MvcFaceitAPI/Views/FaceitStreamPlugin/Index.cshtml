@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MvcFaceitAPI.Models.Streamplugin
+@{
     ViewData["Title"] = "StreamOverlay";
     Layout = null;
     <style>
@@ -9,32 +10,26 @@
 }
 
 
-@if ((int)ViewData["Live"] == 1)
+@if ((int)Model.Live == 1)
 {
     <div style="width:25%; position: absolute; top:0; left:-5px; border-bottom: 2px solid #FF5500; border-image: linear-gradient(to right, #FF5500, #fff,#FF5500) 1; background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(255,255,255,0) 100%);">
         <table align="center" width="100%">
             <tbody align="center">
                 <tr>
-                    <td colspan="3" style="font-size:20px; font-weight:bolder; color:white">@ViewData["ownTeamName"] vs @ViewData["enemyTeamName"]</td>
+                    <td colspan="3" style="font-size:20px; font-weight:bolder; color:white">@Model.ownTeamName vs @Model.enemyTeamName</td>
                 </tr>
                 <tr style="font-size:16px; font-weight:bold; color:white">
-                    <td style="text-align:right; width:30%; color:green">@ViewData["ownTeamWinElo"]</td>
+                    <td style="text-align:right; width:30%; color:green">@Model.ownTeamWinElo</td>
                     <td style="text-align:center; width:40%; color:red"></td>
-                    <td style="text-align:left; width:30%; color:red">@ViewData["enemyTeamWinElo"]</td>
+                    <td style="text-align:left; width:30%; color:red">@Model.enemyTeamWinElo</td>
                 </tr>
                 <tr style="font-size:16px; font-weight:bold; color:white" align="center, width:100%">
-                    <td colspan="3">@ViewData["ownTeamElo"] vs @ViewData["enemyTeamWinElo"]</td>
+                    <td colspan="3">@Model.ownTeamElo vs @Model.enemyTeamElo</td>
                 </tr>
             </tbody>
         </table>
     </div>
 }
-
-
-
-
-
-
 
 
 
@@ -55,13 +50,13 @@
                 <td style="text-align:center; width:10%">*K/R</td>
             </tr>
             <tr style="font-size:12px;" align="center">
-                <td style="text-align:center; width:10%"><span> @ViewData["Elo"] </span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["WonMatches"] /  @ViewData["PlayedMatches"]</span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["WinPercentage"]% </span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["Kills"] </span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["HS"] </span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["KD"] </span></td>
-                <td style="text-align:center; width:10%"><span> @ViewData["KR"] </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.Elo </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.WonMatches /  @Model.PlayedMatches</span></td>
+                <td style="text-align:center; width:10%"><span> @Model.WinPercentage% </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.avgKills </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.avgHs </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.avgKd </span></td>
+                <td style="text-align:center; width:10%"><span> @Model.avgKr </span></td>
             </tr>
         </tbody>
     </table>

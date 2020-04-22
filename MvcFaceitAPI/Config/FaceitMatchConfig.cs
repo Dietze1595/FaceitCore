@@ -2,12 +2,6 @@
 
 namespace Faceitplayermodel.config
 {
-    // --> include Database
-    public static class Database
-    {
-        public static List<Faceitmatch> Match { get; } = new List<Faceitmatch>();
-    }
-
 
     public class Faceitmatch
     {

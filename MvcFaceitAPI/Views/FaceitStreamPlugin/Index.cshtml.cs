@@ -9,6 +9,28 @@ namespace MvcFaceitAPI.Views.FaceitStreamPlugin
 {
     public class IndexModel : PageModel
     {
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
+        }
+
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            return RedirectToPage("./Index");
+        }
+
+
         public void OnGet()
         {
         }

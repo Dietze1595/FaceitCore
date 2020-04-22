@@ -299,7 +299,6 @@ C:\_\FaceitCore\MvcFaceitAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_s
 C:\_\FaceitCore\MvcFaceitAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\_\FaceitCore\MvcFaceitAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\_\FaceitCore\MvcFaceitAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.csprojAssemblyReference.cache
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.csproj.CoreCompileInputs.cache
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.RazorAssemblyInfo.cache
@@ -310,8 +309,6 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.TagHelpers.inp
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.TagHelpers.output.cache
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.RazorCoreGenerate.cache
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitStreamPlugin\Index.cshtml.g.cs
-C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\HelloWorld\Index.cshtml.g.cs
-C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\HelloWorld\Welcome.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -341,3 +338,4 @@ C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitStreamPlu
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\FaceitLiveMatch\noFaceit.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutPost.cshtml.g.cs
 C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Services.cshtml.g.cs
+C:\_\FaceitCore\MvcFaceitAPI\obj\Debug\netcoreapp3.1\MvcFaceitAPI.csprojAssemblyReference.cache
